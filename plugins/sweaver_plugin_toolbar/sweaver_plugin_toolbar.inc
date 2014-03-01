@@ -22,7 +22,7 @@ class sweaver_plugin_toolbar extends sweaver_plugin {
       'title' => 'Designer',
       'page arguments' => array($page_arguments),
       'access callback' => 'sweaver_menu_access_callback',
-      'weight' => -30,
+      'weight' => -36,
       );
 
     return $items;
@@ -48,13 +48,11 @@ class sweaver_plugin_toolbar extends sweaver_plugin {
     drupal_goto($_SERVER['HTTP_REFERER']);
   }
 
-
-
   /**
    * Show editor
    */
   public function show_editor() {
-    return isset($_SESSION['sweaver_plugin_toolbar_session_on']) ? $_SESSION['sweaver_plugin_toolbar_session_on'] : variable_get('sweaver_plugin_toolbar_session_default_on', TRUE);
+    return isset($_SESSION['sweaver_plugin_toolbar_session_on']) ? $_SESSION['sweaver_plugin_toolbar_session_on'] : variable_get('sweaver_plugin_toolbar_session_default_off', TRUE);
   }
 
   /**
